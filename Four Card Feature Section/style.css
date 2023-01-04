@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+:root {
+	/* Primary */
+
+	--Red: hsl(0, 78%, 62%);
+	--Cyan: hsl(180, 62%, 55%);
+	--Orange: hsl(34, 97%, 64%);
+	--Blue: hsl(212, 86%, 64%);
+
+	/* Neutral */
+
+	--Very-Dark-Blue: hsl(234, 12%, 34%);
+	--Grayish-Blue: hsl(229, 6%, 66%);
+	--Very-Light-Gray: hsl(0, 0%, 98%);
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: "Poppins", sans-serif;
+	font-size: 15px;
+	background-color: var(--Very-Light-Gray);
+	color: var(--Grayish-Blue);
+}
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 30px 50px;
+}
+.header {
+	text-align: center;
+}
+.header__title {
+	font-weight: 200;
+	font-size: 32px;
+	color: var(--Very-Dark-Blue);
+}
+.header__subtitle {
+	font-weight: 600;
+	font-size: 32px;
+	color: var(--Very-Dark-Blue);
+}
+.header__paragraph {
+	font-weight: 400;
+	max-width: 600px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+.main {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 25px;
+	margin-top: 50px;
+}
+.box {
+	background-color: white;
+	border-radius: 10px;
+	padding: 25px;
+	text-align: right;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+}
+.box-text {
+	text-align: left;
+	padding-bottom: 20px;
+}
+.box1 {
+	border-top: 4px solid var(--Cyan);
+}
+.box2 {
+	border-top: 4px solid var(--Red);
+}
+.box3 {
+	border-top: 4px solid var(--Orange);
+}
+.box4 {
+	border-top: 4px solid var(--Blue);
+}
+
+.text-title {
+	font-size: 20px;
+	color: var(--Very-Dark-Blue);
+	margin-bottom: 10px;
+}
+.text-paragraph {
+	color: var(--Grayish-Blue);
+	margin-bottom: 10px;
+}
+.box-container {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+}
+.box1,
+.box4 {
+	align-self: center;
+}
+@media only screen and (max-width: 768px) {
+	.main {
+		grid-template-columns: 1fr;
+	}
+}
+@media only screen and (max-width: 425px) {
+	body {
+		font-size: 13px;
+	}
+	.header__title,
+	.header__subtitle {
+		font-size: 22px;
+	}
+	.box {
+		padding: 20px;
+	}
+	.box-text {
+		padding-bottom: 30px;
+	}
+}

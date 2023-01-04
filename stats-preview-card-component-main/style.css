@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+:root {
+	/* Primary */
+	--mb-Very-dark-blue: hsl(233, 47%, 7%);
+	--cb-Dark-desaturated-blue: hsl(244, 38%, 16%);
+	--Soft-violet-accent: hsl(277, 64%, 61%, 0.6);
+
+	/* Neutral */
+	--white: hsl(0, 0%, 100%);
+	--white-main-paragraph: hsla(0, 0%, 100%, 0.75);
+	--white-stat-headings: hsla(0, 0%, 100%, 0.6);
+
+	/* font */
+	--inter: "Inter", sans-serif;
+	--lexend: "Lexend Deca", sans-serif;
+	--body-size: 15px;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: var(--inter);
+	min-height: 100vh;
+	background: var(--mb-Very-dark-blue);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.container {
+	max-width: 1020px;
+	margin: 0 auto;
+}
+.container__wrapper {
+	background-color: var(--cb-Dark-desaturated-blue);
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	border-radius: 10px;
+	overflow: hidden;
+	/* overflow especifica si recortar agrega barras de desplazamiento cuando el contenido es demasiado grande para caber en el especificado zona. 
+	hidden- El desbordamiento se recorta y el resto del contenido será invisible.*/
+	margin: 2rem;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-ms-border-radius: 10px;
+	-o-border-radius: 10px;
+}
+.picture {
+	width: 100%;
+	height: 100%;
+	/* object-fit la propiedad se usa para especificar cómo debe ser redimensionado para adaptarse a su contenedor. cover- La imagen mantiene su relación de aspecto y llena la dimensión dada. La imagen se recortará para adaptarse */
+	object-fit: cover;
+}
+.wrapper__picture {
+	position: relative;
+}
+/* los ::after el selector inserta algo después del contenido de cada elemento seleccionado */
+.wrapper__picture::after {
+	position: absolute;
+	content: " ";
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-color: var(--Soft-violet-accent);
+}
+.wrapper__information {
+	padding: 13%;
+}
+.information__title {
+	color: var(--white);
+	font-size: 2rem;
+	font-weight: 700;
+	line-height: 1.6;
+	padding-bottom: 22px;
+}
+
+.title--active {
+	color: var(--Soft-violet-accent);
+}
+
+.information__paragraph {
+	font-size: var(--body-size);
+	font-family: var(--inter);
+	color: var(--white-main-paragraph);
+	font-weight: 400;
+	line-height: 1.8;
+}
+
+.information__stat-box {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-top: 60px;
+}
+/* 
+.stat-box {
+	font-family: var(--inter);
+}
+*/
+.num {
+	font-size: 25px;
+	color: var(--white);
+	font-weight: 700;
+	margin-bottom: 7px;
+}
+.description {
+	color: var(--white-stat-headings);
+	font-size: 12px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+@media only screen and (max-width: 768px) and (min-width: 426px) {
+	body {
+		font-size: 17px;
+	}
+	.wrapper__information {
+		padding: 12%;
+	}
+	.information__title {
+		font-size: 22px;
+	}
+	.information__stat-box {
+		padding-top: 30px;
+	}
+	.num {
+		font-size: 17px;
+	}
+}
+@media only screen and (max-width: 425px) {
+	body {
+		text-align: center;
+	}
+	.container__wrapper {
+		grid-template-columns: 1fr;
+	}
+	.wrapper__picture {
+		order: -1;
+	}
+	.wrapper__information {
+		padding: 12% 8%;
+	}
+	.information__title {
+		font-size: 23px;
+		line-height: 1.4;
+	}
+	.information__stat-box {
+		flex-direction: column;
+		padding-top: 30px;
+	}
+	.stat-box {
+		margin-top: 20px;
+	}
+}

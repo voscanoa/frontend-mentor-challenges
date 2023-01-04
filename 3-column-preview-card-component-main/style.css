@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+:root {
+	/* Primary */
+	--bright-orange: hsl(31, 77%, 52%);
+	--dark-cyan: hsl(184, 100%, 22%);
+	--very-dark-cyan: hsl(179, 100%, 13%);
+
+	/* Neutral */
+	--Transparent-white-paragraphs: hsla(0, 0%, 100%, 0.75);
+	--Very-light-gray-background-headings-buttons: hsl(0, 0%, 95%);
+
+	--body-size: 15px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: "Lexend Deca", sans-serif;
+	font-weight: 400;
+	font-size: var(--body-size);
+	min-height: 100vh;
+	background: var(--Very-light-gray-background-headings-buttons);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.container {
+	max-width: 960px;
+	margin: 0 auto;
+}
+.wrapper {
+	display: grid;
+	max-width: 960px;
+	grid-template-columns: 1fr 1fr 1fr;
+	border-radius: 12px;
+	margin: 2rem;
+	overflow: hidden;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	-ms-border-radius: 12px;
+	-o-border-radius: 12px;
+}
+.auto {
+	padding: 40px;
+}
+.auto1 {
+	background-color: var(--bright-orange);
+}
+.auto2 {
+	background-color: var(--dark-cyan);
+}
+.auto3 {
+	background-color: var(--very-dark-cyan);
+}
+.auto__title {
+	font-family: "Big Shoulders Display", cursive;
+	text-transform: uppercase;
+	color: white;
+	font-size: 30px;
+	margin-top: 20px;
+}
+.auto__paragraph {
+	color: var(--Transparent-white-paragraphs);
+	line-height: 1.6;
+	margin-top: 20px;
+}
+.button {
+	text-decoration: none;
+	background-color: var(--Very-light-gray-background-headings-buttons);
+	padding: 13px 27px;
+	border-radius: 26px;
+	margin-top: 40px;
+	display: inline-block;
+	border: 2px solid var(--Very-light-gray-background-headings-buttons);
+	-webkit-border-radius: 26px;
+	-moz-border-radius: 26px;
+	-ms-border-radius: 26px;
+	-o-border-radius: 26px;
+	transition: all 0.4s ease-in-out;
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-ms-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+}
+.button1 {
+	color: var(--bright-orange);
+}
+.button2 {
+	color: var(--dark-cyan);
+}
+.button3 {
+	color: var(--very-dark-cyan);
+}
+.button:hover {
+	background: transparent;
+	color: white;
+}
+@media only screen and (max-width: 768px) {
+	.wrapper {
+		grid-template-columns: 1fr;
+	}
+}
+@media only screen and (max-width: 425px) {
+	.wrapper {
+		grid-template-columns: 1fr;
+		margin: 2rem 0.5rem;
+	}
+}
